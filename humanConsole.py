@@ -12,11 +12,11 @@ chrome_path = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 webbrowser.register('chrome', None, webbrowser.BackgroundBrowser(chrome_path))
 
 apps = {
-    'Spotify': r'C:\Users\jonas\AppData\Roaming\Spotify\Spotify.exe',
+    'Spotify': r'C:\Users\mar\AppData\Roaming\Spotify\Spotify.exe',
     'Chrome': r'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe',
     'Notepad': r'%windir%\system32\notepad.exe',
     'Excel': r'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE',
-    'Discord': r'C:\Users\jonas\AppData\Local\Discord\app-0.0.309'
+    'Discord': r'C:\Users\mar\AppData\Local\Discord\app-0.0.309'
 
 }
 
@@ -44,7 +44,7 @@ synonyms = {
 
 temp = ['open', 'launch', 'execute', 'kill', 'close', 'shut', 'halt', 'delete', 'search', 'google']
 searching = ['search', 'google']
-execptions = [nltk.tag.str2tuple(a + '/VB') for a in temp]
+exceptions = [nltk.tag.str2tuple(a + '/VB') for a in temp]
 
 
 def program_check(sentence_arr):
@@ -70,8 +70,8 @@ def spch_to_txt():
 
 
 def check_exc(tg):
-    for a in range(len(execptions)):
-        if tg == execptions[a][0]:
+    for a in range(len(exceptions)):
+        if tg == exceptions[a][0]:
             return 1
 
 
